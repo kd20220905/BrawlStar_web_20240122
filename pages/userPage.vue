@@ -14,9 +14,10 @@ const { PlayerIcons, ClubIcons } = storeToRefs(iconsStore);
 
 const UserImage = computed(() => {
   if (!UserInfo.value) return "";
-  // if (!UserInfo.value.icon) return "";
-  // if (!UserInfo.value.icon.id) return "";
-  // if (!PlayerIcons.value[UserInfo.value.icon.id].imageUrl) return "";
+  if (!UserInfo.value.icon) return "";
+  if (!UserInfo.value.icon.id) return "";
+  if (!PlayerIcons.value[UserInfo.value.icon.id]) return "";
+  if (!PlayerIcons.value[UserInfo.value.icon.id].imageUrl) return "";
   return PlayerIcons.value[UserInfo.value.icon.id].imageUrl;
 });
 </script>
