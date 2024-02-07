@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ["nuxt-icon", "@nuxtjs/google-fonts", "@pinia/nuxt"],
   css: ["~/assets/css/main.css"],
-  app: {
-    buildAssetsDir: "BrawlStar_web_20240122",
+  router: {
+    base: "/BrawlStar_web_20240122",
   },
   postcss: {
     plugins: {
