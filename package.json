@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": " nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -22,6 +22,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
     "pinia": "^2.1.7",
-    "vue-grid-layout": "^3.0.0-beta1"
+    "vue-grid-layout": "^3.0.0-beta1",
+    "vuedraggable": "^4.1.0"
   }
 }

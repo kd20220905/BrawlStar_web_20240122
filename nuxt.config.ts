@@ -1,8 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ["nuxt-icon", "@nuxtjs/google-fonts", "@pinia/nuxt"],
   css: ["~/assets/css/main.css"],
+  app: {
+    buildAssetsDir: "BrawlStar_web_20240122",
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
