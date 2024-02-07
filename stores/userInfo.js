@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { postPlayerAPI } from "~/assets/API/API";
 export const useUserInfoStore = defineStore("UserInfoStore", () => {
   const router = useRouter();
+  const UserTag = ref("");
   const UserInfo = ref();
   const UserBrawlers = computed(() => {
     if (!UserInfo.value) return;
@@ -11,6 +12,7 @@ export const useUserInfoStore = defineStore("UserInfoStore", () => {
     const { data } = await useAsyncData("postPlayerAPI", () =>
       postPlayerAPI(tag)
     );
+    UserTag.value = tag;
     console.log(data.value);
     const { code, message, dataInfo } = data.value;
     switch (code) {
@@ -27,5 +29,5 @@ export const useUserInfoStore = defineStore("UserInfoStore", () => {
   function setUserInfo(data) {
     UserInfo.value = data;
   }
-  return { UserInfo, UserBrawlers, setUserInfo, submitTag };
+  return { UserInfo, UserBrawlers, setUserInfo, submitTag, UserTag };
 });

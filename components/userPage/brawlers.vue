@@ -178,7 +178,9 @@ const findBrawlerRank = (brawlerId) => {
               v-if="hasBrawler(brawler.id)"
             >
               <img
-                :src="`/rank/${findBrawlerRank(brawler.id)}.png`"
+                :src="`/BrawlStar_web_20240122/rank/${findBrawlerRank(
+                  brawler.id
+                )}.png`"
                 alt=""
                 class="h-[35px] mr-1"
               />
@@ -216,13 +218,19 @@ const findBrawlerRank = (brawlerId) => {
                 />
                 <div class="" v-if="hasBrawler(brawler.id)">
                   <img
-                    :src="`/rank/${findBrawlerRank(brawler.id)}.png`"
+                    :src="`/BrawlStar_web_20240122/rank/${findBrawlerRank(
+                      brawler.id
+                    )}.png`"
                     alt=""
                     class="w-[32px]"
                   />
                 </div>
                 <div class="" v-else>
-                  <img :src="`/rank/1.png`" alt="" class="w-[32px]" />
+                  <img
+                    :src="`/BrawlStar_web_20240122/rank/1.png`"
+                    alt=""
+                    class="w-[32px]"
+                  />
                 </div>
               </div>
               <div class="flex items-center" v-if="hasBrawler(brawler.id)">

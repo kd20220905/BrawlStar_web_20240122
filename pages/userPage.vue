@@ -8,7 +8,7 @@ const userInfoStore = useUserInfoStore();
 const brawlersStore = useBrawlersStore();
 const iconsStore = useIconsStore();
 
-const { UserInfo } = storeToRefs(userInfoStore);
+const { UserInfo, UserTag } = storeToRefs(userInfoStore);
 const { Brawlers } = storeToRefs(brawlersStore);
 const { PlayerIcons, ClubIcons } = storeToRefs(iconsStore);
 
@@ -19,6 +19,9 @@ const UserImage = computed(() => {
   if (!PlayerIcons.value[UserInfo.value.icon.id]) return "";
   if (!PlayerIcons.value[UserInfo.value.icon.id].imageUrl) return "";
   return PlayerIcons.value[UserInfo.value.icon.id].imageUrl;
+});
+onMounted(() => {
+  console.log(UserTag.value);
 });
 </script>
 <template>

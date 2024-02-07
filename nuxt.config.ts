@@ -1,7 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ["nuxt-icon", "@nuxtjs/google-fonts", "@pinia/nuxt"],
+  modules: [
+    "nuxt-icon",
+    "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+  ],
   css: ["~/assets/css/main.css"],
   app: {
     baseURL: "/BrawlStar_web_20240122",

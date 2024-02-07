@@ -1,20 +1,28 @@
 import { defineStore } from "pinia";
 import { getAllBrawlersAPI } from "~/assets/API/API";
-export const useBrawlersStore = defineStore("BrawlersStore", () => {
-  const Brawlers = ref([]);
+export const useBrawlersStore = defineStore(
+  "BrawlersStore",
+  () => {
+    const Brawlers = ref([]);
 
-  async function getAllBrawlers() {
-    const { data } = await useAsyncData("getAllBrawlersAPI", () =>
-      getAllBrawlersAPI()
-    );
-    const { list } = data.value;
-    if (list) {
-      setBrawlers(list);
+    async function getAllBrawlers() {
+      const { data } = await useAsyncData("getAllBrawlersAPI", () =>
+        getAllBrawlersAPI()
+      );
+      const { list } = data.value;
+      if (list) {
+        setBrawlers(list);
+      }
     }
-  }
 
-  function setBrawlers(data) {
-    Brawlers.value = data;
+    function setBrawlers(data) {
+      Brawlers.value = data;
+    }
+    return { Brawlers, getAllBrawlers };
+  },
+  {
+    persist: {
+      storage: persistedState.sessionStorage,
+    },
   }
-  return { Brawlers, getAllBrawlers };
-});
+);
